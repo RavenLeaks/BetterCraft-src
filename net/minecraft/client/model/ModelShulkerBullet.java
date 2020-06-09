@@ -1,0 +1,46 @@
+/*    */ package net.minecraft.client.model;
+/*    */ 
+/*    */ import net.minecraft.entity.Entity;
+/*    */ 
+/*    */ public class ModelShulkerBullet
+/*    */   extends ModelBase
+/*    */ {
+/*    */   public ModelRenderer renderer;
+/*    */   
+/*    */   public ModelShulkerBullet() {
+/* 11 */     this.textureWidth = 64;
+/* 12 */     this.textureHeight = 32;
+/* 13 */     this.renderer = new ModelRenderer(this);
+/* 14 */     this.renderer.setTextureOffset(0, 0).addBox(-4.0F, -4.0F, -1.0F, 8, 8, 2, 0.0F);
+/* 15 */     this.renderer.setTextureOffset(0, 10).addBox(-1.0F, -4.0F, -4.0F, 2, 8, 8, 0.0F);
+/* 16 */     this.renderer.setTextureOffset(20, 0).addBox(-4.0F, -1.0F, -4.0F, 8, 2, 8, 0.0F);
+/* 17 */     this.renderer.setRotationPoint(0.0F, 0.0F, 0.0F);
+/*    */   }
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */   
+/*    */   public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+/* 25 */     setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entityIn);
+/* 26 */     this.renderer.render(scale);
+/*    */   }
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */   
+/*    */   public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
+/* 36 */     super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
+/* 37 */     this.renderer.rotateAngleY = netHeadYaw * 0.017453292F;
+/* 38 */     this.renderer.rotateAngleX = headPitch * 0.017453292F;
+/*    */   }
+/*    */ }
+
+
+/* Location:              C:\Users\emlin\Desktop\BetterCraft.jar!\net\minecraft\client\model\ModelShulkerBullet.class
+ * Java compiler version: 8 (52.0)
+ * JD-Core Version:       1.1.3
+ */
